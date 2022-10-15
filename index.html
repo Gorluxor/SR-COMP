@@ -2,45 +2,69 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<!-- <script src="js/modernizr.js"></script> Modernizr -->
-  	
-	<title>Image Comparison Slider | CodyHouse</title>
+    <link rel="stylesheet" href="css/tab.css"> <!-- Tab style -->
+	<script src="js/modernizr.js" defer></script> Modernizr
+  	<script src="js/change.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', calling, false);
+        function add_script(scipt_name){
+            var script= document.createElement('script');
+            script.type="text/javascript";
+            script.src = scipt_name //"js/modernizr.js"
+            document.getElementsByTagName('head')[0].appendChild(script);  
+        }
+
+        function calling() {
+            alert(`Page is loaded`);
+            createChildren()
+            
+            add_script("js/main.js")
+           
+             
+        }
+        
+    </script>
+
+	<title>Image Upscale Comparison</title>
 </head>
-<body>
+<body id="body">
 	<header>
-		<h1>Image Comparison Slider</h1>
+		<h1 style="font-size: 5em;">Image Comparison Slider</h1>
 	</header>
-	<figure class="cd-image-container">
-		<img src="img/img-original.jpg" alt="Original Image">
-		<span class="cd-image-label" data-type="original">Original</span>
+	
+    <div class="tab" id="tab" >
+        <button class="tablinks" onclick="openImage(event, '00000')">00000</button>  <!-- onload="generateTabContent('00000', 4096)" -->
+        <!-- <button class="tablinks" onclick="openImage(event, '00001')">00001</button>
+        <button class="tablinks" onclick="openImage(event, '00002')">00002</button> -->
+    </div>
+   
+    <!-- <div id="00000" class="tabcontent">
+        
+    </div> -->
 
-		<div class="cd-resize-img"> <!-- the resizable image on top -->
-			<img src="img/img-modified.jpg" alt="Modified Image">
-			<span class="cd-image-label" data-type="modified">Modified</span>
-		</div>
+    <div id="content" style="text-align:center; margin-left: auto; margin-right: auto;">
 
-		<span class="cd-handle"></span>
-	</figure> <!-- cd-image-container -->
 
-	<figure class="cd-image-container is-visible">
-		<img src="https://github.com/Gorluxor/SR-COMP/blob/main/extras-images-ESRGAN/00000.png?raw=True" width="4096" height="4096" alt="Original Image">
-		<span class="cd-image-label" data-type="original">ESRGAN</span>
-		
-		<div class="cd-resize-img" style="width: 50.118%;">
-			<img src="https://github.com/Gorluxor/SR-COMP/blob/main/extras-images_Lanczos/00000.png?raw=True" width="4096" height="4096" alt="Modified Image">
-			<span class="cd-image-label" data-type="modified">Lancozs</span>
-		</div>
-		<span class="cd-handle cd-first" style="left: 50.118%;"></span>
-</figure>
+    </div>
+    
 
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script> <!-- Resource jQuery -->
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script> <!-- Resource jQuery -->
+    <!-- <script src="js/main.js"></script>  --> <!-- Resource jQuery -->
+
+
 </body>
+
 </html>
+
+
+
