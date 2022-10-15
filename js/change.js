@@ -36,21 +36,19 @@ function addGenerateComparisonImage(content_tag, imageName, method_1_folder, met
     </figure>
     `;
     let new_tag = parseHTML(instance_of_img);
-    console.log(new_tag)
+    
     content_tag.appendChild(new_tag);
 }
 
 function generateTabContent(imageName, tag){
-// Creates one tab which has all the images from different folders comparing againts Lanczos
-    // var body_tag = document;
-    // console.log(document.documentElement);
-    console.log("I have been called with", tag, imageName);
+    // Creates one tab which has all the images from different folders comparing againts Lanczos 
+    
 
     // let parse = new DOMParser()
-    let new_tag = parseHTML(`<div id="${imageName}" class="tabcontent"> </div>`)
+    let new_tag = parseHTML(`<div id="${imageName}" class="tabcontent"> </div>`);
     tag.appendChild(new_tag);
-    //console.log("I have been called", tag);
-    var instance_of_tab = ``
+    
+
     // dictionary with keys as method names, and values as list containting [folder_name, method_name]
     var method_names = {
         "lanczos": ["extras-images_Lanczos", "Lancozs"],
@@ -74,11 +72,11 @@ function generateTabContent(imageName, tag){
 function createChildren(size){
     var div_tag = document.getElementById("tab");
     var content_tag = document.getElementById("content");
-    console.log("Output of div_tag: ", div_tag.outerHTML);
-    console.log("Output of content_tag: ", content_tag.outerHTML);
+    // console.log("Output of div_tag: ", div_tag.outerHTML);
+    // console.log("Output of content_tag: ", content_tag.outerHTML);
     // get children of div_tag and call generateTabContent on each one of them
     var children = div_tag.children;
-    console.log("Out chidren: ", children);
+    // console.log("Out chidren: ", children);
     for (var i = 0; i < children.length; i++){
         generateTabContent(children[i].innerText, content_tag, size);
     }
