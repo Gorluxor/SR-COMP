@@ -58,6 +58,8 @@ function generateTabContent(imageName, tag){
         "swinir4": ["extras-images_SwinIR4", "SwinIR4"],
         "original": ["ffhq_1024_20", "Original"],
         "esrgan": ["extras-images-ESRGAN", "ESRGAN"],
+        "valar": ["Valar", "Valar x4"],
+        "valarCF" : ["Valar_CF", "Valar x4 CodeFormer"]
     }
     // for each over the dictionary and call the addGenerateComparisonImage function on other methods compared to lanczos by extracting data from the dictionary
     for (const [key, value] of Object.entries(method_names)) {
